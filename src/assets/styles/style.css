@@ -13,3 +13,70 @@
 ul {
     list-style-type: none;
 }
+
+.error{
+    color: red;
+    font-size: 17px;
+
+}
+
+.hotel-block{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.hotel{
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    cursor: default;
+    width: 100%;
+    text-align: center;
+    background-color: #9fcdff;
+}
+
+.hotel-img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.hotel-name{
+    width: fit-content;
+    font-size: 30px;
+    color: #000;
+}
+.hotel-address{
+    font-size: 28px;
+    color: #000;
+}
+.hotel-phone{
+    font-size: 25px;
+    color: #000;
+}
+.hotel-info-flock{
+    margin: 0 15px;
+    text-align: start;
+}
+.hotel-info-flock * {
+    margin: 15px 0 ;
+}
+.hotel-road-more{
+    text-transform: uppercase;
+    font-size: 20px;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+.hotel-road-more:hover{
+    background-color: #ee5057;
+    color: white;
+}
+.mini-navbar{
+    background-color: #000;
+    display: none;
+}
+.navbar:hover .mini-navbar{
+    display: block;
+    background-color: #0f0;
+}

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { serialize } from 'object-to-formdata';
 
 const { REACT_APP_API_URL } = process.env;
 
@@ -8,9 +7,44 @@ const api = axios.create({
 });
 
 class Api {
-  static createHotel(post) {
-    console.log(post);
-    return api.post('hotel/create', serialize(post, { indices: true }));
+  static createHotel(data) {
+    return api.post('/hotel/create', data, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+  }
+
+  static getHotelsList() {
+    return api.get('/hotel/list');
+  }
+
+  static getSingleHotel(id) {
+    return api.get(`/hotel/single/${id}`);
+  }
+
+  static deleteHotel(id) {
+    return api.get(`/hotel/delete/${id}`);
+  }
+
+  static createRoom(data) {
+    return api.post('/room/create', data, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+  }
+
+  static getRoomsList(id) {
+    return api.get(`/room/list/${id}`);
+  }
+
+  static getSingleRoom(id) {
+    return api.get(`/room/single/${id}`);
+  }
+
+  static deleteRoom(id) {
+    return api.get(`/room/delete/${id}`);
   }
 }
 

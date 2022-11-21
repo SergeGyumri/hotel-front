@@ -1,8 +1,8 @@
 import { all, fork } from 'redux-saga/effects';
-import users from './hotels';
+import hotels from './hotels';
 
 export default function* watchers() {
   yield all([
-    users,
+    hotels,
   ].map(fork));
 }

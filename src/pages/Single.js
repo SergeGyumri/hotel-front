@@ -1,20 +1,19 @@
 import React, { useEffect } from 'react';
-import _ from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
+import _ from 'lodash';
 import {
-  Link, useNavigate,
+  Link, NavLink, useParams,
 } from 'react-router-dom';
 import Carousel from 'nuka-carousel';
-import { getHotels } from '../store/actions/hotels';
+import { getSingleHotel } from '../store/actions/hotels';
 import Header from '../components/Header';
 
-function Hotel() {
-  const hotels = useSelector((store) => store.hotels.hotels);
-
-  const navigate = useNavigate();
+function Single() {
+  const single = useSelector((store) => store.hotels.single);
   const dispatch = useDispatch();
+  const params = useParams();
   useEffect(() => {
-    dispatch(getHotels());
+    dispatch(getSingleHotel(params.id));
   }, []);
   return (
     <>
@@ -24,9 +23,9 @@ function Hotel() {
         <div className="container">
           <div className="row">
             <div className="hotel-block">
-              {!_.isEmpty(hotels)
-                ? hotels.map((hotel) => (
-                  <div key={hotel.id} className="hotel">
+              {!_.isEmpty(single)
+                ? (
+                  <div className="hotel">
                     <Carousel
                       cellAlign="right"
                       wrapAround
@@ -36,7 +35,7 @@ function Hotel() {
                       renderCenterLeftControls={() => {}}
                       renderCenterRightControls={() => {}}
                     >
-                      {hotel.images.map((img) => (
+                      {single.images.map((img) => (
                         <img
                           key={img.id}
                           className="hotel-img"
@@ -46,13 +45,12 @@ function Hotel() {
                       ))}
                     </Carousel>
                     <div className="hotel-info-flock">
-                      <h3 className="hotel-name">{hotel.name}</h3>
+                      <h3 className="hotel-name">{single.name}</h3>
+                      <h3 className="hotel-address">{single.address}</h3>
+                      <h3 className="hotel-phone">{single.phone}</h3>
                     </div>
-                    <button onClick={() => navigate(`${hotel.id}`)} type="submit" className="hotel-road-more">
-                      road more
-                    </button>
                   </div>
-                )) : null}
+                ) : null}
             </div>
           </div>
         </div>
@@ -63,4 +61,4 @@ function Hotel() {
   );
 }
 
-export default Hotel;
+export default Single;

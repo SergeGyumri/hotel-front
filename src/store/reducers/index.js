@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import users from './hotels';
+import hotels from './hotels';
 
 export default combineReducers({
-  users,
+  hotels,
 });
