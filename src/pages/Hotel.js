@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import _ from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  Link, useNavigate,
+  useNavigate,
 } from 'react-router-dom';
 import Carousel from 'nuka-carousel';
 import { getHotels } from '../store/actions/hotels';
@@ -45,8 +45,12 @@ function Hotel() {
                         />
                       ))}
                     </Carousel>
-                    <div className="hotel-info-flock">
-                      <h3 className="hotel-name">{hotel.name}</h3>
+                    <div className="hotel-info-block">
+                      <h3 className="hotel-name">
+                        hotel:
+                        {' '}
+                        {hotel.name}
+                      </h3>
                     </div>
                     <button onClick={() => navigate(`${hotel.id}`)} type="submit" className="hotel-road-more">
                       road more

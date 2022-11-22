@@ -17,7 +17,6 @@ ul {
 .error{
     color: red;
     font-size: 17px;
-
 }
 
 .hotel-block{
@@ -41,10 +40,16 @@ ul {
     width: 100%;
     height: 100%;
 }
-.hotel-name{
+.room{
+    margin: 50px 0;
+}
+.hotel-name, .room-info{
     width: fit-content;
     font-size: 30px;
     color: #000;
+}
+.room-info{
+    width: 100%;
 }
 .hotel-address{
     font-size: 28px;
@@ -54,11 +59,21 @@ ul {
     font-size: 25px;
     color: #000;
 }
-.hotel-info-flock{
+.hotel-info-block   {
     margin: 0 15px;
     text-align: start;
 }
-.hotel-info-flock * {
+.hotel-room-info-block{
+    background-color: #9fcdff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.hotel-room-info-block * {
+    color: #1b1e21;
+    margin-bottom: 10px;
+}
+.hotel-info-block * {
     margin: 15px 0 ;
 }
 .hotel-road-more{
@@ -79,4 +94,24 @@ ul {
 .navbar:hover .mini-navbar{
     display: block;
     background-color: #0f0;
+}
+.hotel-rooms-block{
+    margin-top: 50px;
+}
+.single-hotel-rooms-title-block{
+    background-color: #80bdff;
+    margin: 15px 0;
+}
+.single-hotel-rooms-title{
+    font-size: 30px;
+    margin: 0 15px;
+    padding: 15px 0;
+}
+.beds{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.bed-count{
+    margin: 0 15px;
 }

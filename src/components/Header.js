@@ -19,7 +19,7 @@ function Header() {
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item">
                     <NavLink
-                      activeClassName="active"
+                      activeclassname="active"
                       className="nav-link"
                       to="/hotels"
                     >
@@ -28,7 +28,7 @@ function Header() {
                   </li>
                   <li className="nav-item">
                     <NavLink
-                      activeClassName="active"
+                      activeclassname="active"
                       className="nav-link"
                       to="/reserve"
                     >

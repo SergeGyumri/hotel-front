@@ -13,6 +13,7 @@ import {
 const initialState = {
   hotels: [],
   createHotelRequestStatus: '',
+  rooms: [],
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -57,6 +58,7 @@ export default function reducer(state = initialState, action = {}) {
       return {
         ...state,
         single: action.payload.hotel,
+        rooms: action.payload.hotel.rooms,
       };
     }
     case GET_SINGLE_HOTEL_FAIL: {
